@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo-container">
+                    <img src="data:image/png;base64,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" alt="Logo" class="logo-img">
+                    <span class="logo-text">Amna Ansar</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#certificates">Certificates</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hi, I'm <span>Amna Ansar</span></h1>
+                <h2>Frontend Developer</h2>
+                <p>I build exceptional digital experiences with modern technologies and user-focused design principles.</p>
+                <div style="display: flex; gap: 15px;">
+                    <a href="#projects" class="btn">View My Work</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a passionate Software Engineer about building responsive and user-friendly digital experiences.</p>
+                    <p>I enjoy solving problems and transforming ideas into practical solutions.
+My focus is on creating clean, modern, and impactful designs.
+Always eager to learn and grow with emerging technologies.</p>
+                </div>
+                <div class="about-details">
+                    <div class="detail-card">
+                        <h3>Education</h3>
+                        <p>BS Software Engineering<br>University of Gujrat, 2023(Present)</p>
+                    </div>
+                    <div class="detail-card">
+                        <h3>Experience</h3>
+                        <p>Frontend Developer Intern<br>JSoft Technologies, Summer 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                
+                <div class="skill">
+                    <i class="fab fa-html5"></i>
+                    <h3>HTML5</h3>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-css3-alt"></i>
+                    <h3>CSS3</h3>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-java"></i>
+                    <h3>Java</h3>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-github"></i>
+                    <h3>Github</h3>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-database"></i>
+                    <h3>SQL</h3>
+                </div>
+                <div class="skill">
+                    <wdewi class="fab fa-figma"></i>
+                    <h3>Figma</h3>
+                </div>
+                 <div class="skill">
+                    <i class="fab fa-bootstrap"></i>
+                    <h3>Bootstrap</h3>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-wordpress"></i>
+                    <h3>Wordpress</h3>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-pen-ruler"></i>
+                    <h3>UI/UX</h3>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-computer"></i>
+                    <h3>Responsive Design</h3>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certificates-container">
+                <div class="certificate-card">
+                    <img src="Advance.jpeg" alt="AWS Certified">
+                    <div class="certificate-info">
+                        <h3>Advance Era Tech</h3>
+                        <a href="Advance.jpeg" class="btn btn-outline">View Certificate</a>
+                    </div>
+                </div>
+                <div class="certificate-card">
+                    <img src="Wordpress.jpeg" alt="Wordpress Certification">
+                    <div class="certificate-info">
+                        <h3>Wordpress Web Development</h3>
+                        <a href="Wordpress.jpeg" class="btn btn-outline">View Certificate</a>
+                    </div>
+                </div>
+                <div class="certificate-card">
+                    <img src="JSoft.jpeg" alt="JSoft Certification">
+                    <div class="certificate-info">
+                        <h3>Frontend Developer</h3>
+                        <a href="JSoft.jpeg" class="btn btn-outline">View Certificate</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume">
+        <div class="container">
+            <h2 class="section-title">My Resume</h2>
+            <div class="resume-container">
+                <div class="resume-column">
+                    <h3>Education</h3>
+                    <div class="resume-item">
+                        <h4>Bachelor of Software Engineering</h4>
+                        <span class="date">2023 - Present</span>
+                        <p>University of Gujrat</p>
+                    </div>
+                    <div class="resume-item">
+                        <h4>Intermediate(ICS)</h4>
+                        <span class="date">2021 - 2022</span>
+                        <p>Superior College</p>
+                    </div>
+                </div>
+                <div class="resume-column">
+                    <h3>Experience</h3>
+                    <div class="resume-item">
+                        <h4>Frontend Developer Intern</h4>
+                        <span class="date">July 2025 - Aug 2025</span>
+                        <p>Advance Era Tech</p>
+                    </div>
+                    <div class="resume-item">
+                        <h4>Frontend Web Developer</h4>
+                        <span class="date">June 2025 - Present</span>
+                        <p>JSoft Technology</p>
+                    </div>
+                </div>
+            </div>
+            <div class="download-btn">
+                <a href="Resume .png" class="btn"><i class="fas fa-download"></i> Download Full Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="Graphic.png" alt="Graphic Designing">
+                    <div class="project-info">
+                        <h3>Graphic Designing</h3>
+                        <a href="https://advanceeratech.com/graphic-designing/" class="btn btn-outline">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="pfuj.png" alt="PFUJ">
+                    <div class="project-info">
+                        <h3>PFUJ</h3>
+                        <a href="https://practice.servicehubsolution.com/" class="btn btn-outline">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="JSoft1.png" alt="JSoft">
+                    <div class="project-info">
+                        <h3>JSoft Technologies</h3>
+                        <a href="https://jsofttechnology.com/" class="btn btn-outline">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                    <input type="hidden" name="access_key" value="1c9989b0-e77b-4547-8af2-d78a146e834d">
+                    
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+                    
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>I'm currently open to internship opportunities for Summer 2024. Feel free to reach out for collaborations or just to say hello!</p>
+                    <a href="mailto:amna64885@gmail.com" target="_blank" rel="noopener noreferrer"><p><i class="fas fa-envelope"></i> amna64885@gmail.com</p></a>
+                    <a href="https://wa.me/923086244846" target="_blank" rel="noopener noreferrer"><p><i class="fas fa-phone"></i> +92 308 6244846</p></a>
+                    <a href="https://maps.app.goo.gl/NGJpuPeDu7rajUF5A" target="_blank" rel="noopener noreferrer"><p><i class="fas fa-map-marker-alt"></i> Gujrat, Pakistan</p></a>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Amna Ansar. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
